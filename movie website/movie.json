@@ -1,0 +1,101 @@
+[
+  {
+    "title": "sonic 2",
+    "cover": "images/sonic 2.jpg",
+    "quality": "Full HD",
+    "rating": "8.2",
+    "releaseDate": "28 August 2017",
+    "duration": "2h 9m",
+    "language": "English",
+    "category": "funny, Action, Adventure",
+    "description": "When Dr. Robotnik returns with a new partner, Knuckles, in search of an emerald that has the power to destroy civilizations, Sonic teams up with his own sidekick, Tails, on a journey across the world to find the emerald first.",
+    "screenshots": [
+      "Movie-Data/sonic 2/1.jpg",
+      "Movie-Data/sonic 2/2.jpg",
+      "Movie-Data/sonic 2/3.jpg",
+      "Movie-Data/sonic 2/4.jpg" 
+    ],
+    "downloadLinks": [
+  { "server": "server 1", "language": "English & Hindi", "quality": "1080p", "link": "https://cpmlink.co/31gFuZ" },
+  { "server": "server 2", "language": "English & Hindi", "quality": "720p", "link": "https://cpmlink.co/wseF" },
+  { "server": "server 3", "language": "English & Hindi", "quality": "480p", "link": "https://cpmlink.co/B4wI3" }
+  ],
+  "videoUrl": "Movie-Data/sonic 2/Movie.mp4",
+    "trailerLink": "https://youtu.be/G5kzUpWAusI?si=SmCrptc4u2sePPv3"
+  },
+  {
+    "title": "captian Marvel",
+    "cover": "Movie-Data/Captain Marvel/poster.jpeg",
+    "quality": "Full HD",
+    "rating": "8.2",
+    "releaseDate": "28 August 2019",
+    "duration": "2h 17m",
+    "language": "English",
+    "category": "Thriller, Action, Adventure",
+    "description": "Carol Danvers becomes one of the universe's most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.",
+    "screenshots": [
+      "Movie-Data/Captain Marvel/1.webp", 
+      "Movie-Data/Captain Marvel/2.webp",
+      "Movie-Data/Captain Marvel/3.webp",
+      "Movie-Data/Captain Marvel/4.webp"
+    ],
+    "downloadLinks": [
+  { "server": "server 1", "language": "English & Hindi", "quality": "1080p", "link": "https://cpmlink.co/31gFuZ" },
+  { "server": "server 2", "language": "English & Hindi", "quality": "720p", "link": "https://cpmlink.co/wseF" },
+  { "server": "server 3", "language": "English & Hindi", "quality": "480p", "link": "https://cpmlink.co/B4wI3" }
+  ],
+  "videoUrl": "Movie-Data/Captain Marvel/Movie.mp4",
+  "trailerLink": "https://youtu.be/Z1BCujX3pw8?si=4Zyy3wfWUbyDZ-zn"
+  },
+  {
+    "title": "The Union",
+    "cover": "Movie-Data/The Union/poster.jpg",
+    "quality": "Full HD",
+    "rating": "7.2",
+    "releaseDate": "12 April 2023",
+    "duration": "1h 35m",
+    "language": "English",
+    "category": "Thriller, Action, Adventure",
+    "description": "Construction worker Mike is thrust into the world of espionage when his high school sweetheart, Roxanne, recruits him for a high-stakes intelligence mission.",
+    "screenshots": [
+      "Movie-Data/The Union/1.jpg", 
+      "Movie-Data/The Union/2.jpg",
+      "Movie-Data/The Union/3.jpg",
+      "Movie-Data/The Union/3.jpg"
+      
+    ],
+    "downloadLinks": [
+  { "server": "server 1", "language": "English & Hindi", "quality": "1080p", "link": "https://new2.filesdl.site/cloud/D35pXukBGs" },
+  { "server": "server 2", "language": "English & Hindi", "quality": "720p", "link": "https://new2.filesdl.site/cloud/XHecBrMjOz" },
+  { "server": "server 3", "language": "English & Hindi", "quality": "480p", "link": "https://new2.filesdl.site/cloud/A7eYhwiBFt" }
+  ],
+  "videoUrl": "Movie-Data/The Union/Movie.mp4",
+  "trailerLink": "https://youtu.be/vea9SdnRMyg?si=iX1kSwBfWwZBsjVW"
+  },
+  {
+    "title": "Thunderbolts",
+    "cover": "Movie-Data/Thunderbolts/poster.jpeg",
+    "quality": "Full HD",
+    "rating": "8.2",
+    "releaseDate": "12 April 2023",
+    "duration": "2h 6m",
+    "language": "English",
+    "category": "Thriller, Action, Adventure",
+    "description": "After finding themselves ensnared in a death trap, an unconventional team of antiheroes must embark on a dangerous mission that will force them to confront the darkest corners of their pasts..",
+    "screenshots": [
+      "Movie-Data/Thunderbolts/screenshot-1.jpeg", 
+      "Movie-Data/Thunderbolts/screenshot-3.jpeg",
+      "Movie-Data/Thunderbolts/screenshot- 2.jpeg",
+       "Movie-Data/Thunderbolts/screenshot-4.jpeg"
+    
+    ],
+    "downloadLinks": [
+  { "server": "server 1", "language": "English & Hindi", "quality": "1080p", "link": "https://new2.filesdl.site/cloud/iqMVfczwL8" },
+  { "server": "server 2", "language": "English & Hindi", "quality": "720p", "link": "https://new2.filesdl.site/cloud/gZqPkXuS3s" },
+  { "server": "server 3", "language": "English & Hindi", "quality": "480p", "link": "https://new2.filesdl.site/cloud/anp14VLdzN" }
+  ],
+  "videoUrl": "Movie-Data/Thunderbolts/Movie.mp4",
+  "trailerLink": "https://youtu.be/-sAOWhvheK8?si=kKk4xzL8rtXiosp2"
+  }
+  
+]

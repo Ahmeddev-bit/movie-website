@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details - Pirates of the Caribbean: Salazar's Revenge</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/fav-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Monoton&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div id="progress">
+        <span id="progress-value"></span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navegation">
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon">
+            <span class="nav-icon"></span>
+        </label>
+        <a href="index.html" class="logo">Movies Bug<span>.hd</span></a>
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Genre</a></li>
+            <li><a href="#">TV Shows</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <form action="#" class="search-box">
+            <input type="text" name="search" id="search-input" placeholder="Search Movies">
+            <button type="submit">
+                <i class="fa-solid fa-search"></i>
+            </button>
+        </form>
+    </nav>
+
+    <!-- Movie Banner -->
+    <section class="movie-banner">
+        <div class="m-banner-img">
+            <img src="" id="movie-cover" alt="Movie Image">
+        </div>
+        <div class="banner-container">
+            <div class="title-container">
+                <div class="movie-title">
+                    <h1 id="movie-title"></h1>
+                </div>
+                <div class="more-about-movie">
+                    <span class="quality" id="quality"></span>
+                    <div class="rating">
+                        <span id="rating"></span> <img src="images/IMDb-icon.png" alt="IMDb">
+                    </div>
+                    <span id="release-date"></span> | <span id="duration"></span>
+                </div>
+                <div class="language">
+                    <span id="language"></span>
+                </div>
+                <div class="title-bottom">
+                    <div class="category">
+                        <strong>Category:</strong> <span id="category"></span>
+                    </div>
+                    <a href="#" class="watch-btn" id="watch-trailer">Watch Trailer</a>
+                </div>
+            </div>
+            <div class="play-btn-container">
+                <div class="play-btn">
+                    <a href="javascript:void(0)" id="play-btn">
+                        <i class="fa-solid fa-play"></i>
+                    </a>
+                </div>
+            </div>
+            <div id="play" class="play">
+                <a href="javascript:void(0)" class="close-movie">
+                    <i class="fa-solid fa-times"></i>
+                </a>
+                <div class="play-movie">
+                    <video id="m-video" controls>
+                        <source src="" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Movie Details -->
+    <section class="movie-details">
+        <strong id="movie-details-title"></strong>
+        <p id="movie-description"></p>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="screenshot">
+        <strong>Screenshots</strong>
+        <div class="screen-s-contanier" id="screenshots-container"></div>
+    </section>
+
+    <!-- Download Options -->
+    <section class="download-movie">
+        <div class="download-container" id="download-container">
+          <!-- Download boxes will be injected here -->
+        </div>
+      </section>      
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="index.html" class="logo">Movies <span>hd</span></a>
+        <span class="copy-right">© Copyright 2024 - Going to Internet</span>
+    </footer>
+
+    <script src="js/jquery.js"></script>
+    
+    <script>
+        /* Progress bar */
+        let scrollpercentage = () => {
+            let scrollProgress = document.getElementById("progress");
+            let progressValue = document.getElementById("progress-value");
+            let pos = document.documentElement.scrollTop;
+            let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrollValue = Math.round(pos * 100 / calcHeight);
+            scrollProgress.style.background = `conic-gradient(#e70634 ${scrollValue}%, #2b2f38 ${scrollValue}%)`;
+        };
+        window.onscroll = scrollpercentage;
+        window.onload = scrollpercentage;
+        
+        // Menu button fixed on scroll
+        $(window).scroll(function () {
+            if ($(document).scrollTop() > 20) {
+                $('.navegation').addClass('fix-icon');
+            } else {
+                $('.navegation').removeClass('fix-icon');
+            }
+        });
+
+        /* Popup open/close */
+        $(document).on('click', '.play-btn a', function () {
+            $('.play').addClass('active-popup');
+        });
+        $(document).on('click', '.close-movie', function () {
+            $('.play').removeClass('active-popup');
+        });
+
+        // Play video when popup opens
+        $('.play-btn a').click(function () {
+            $('#m-video')[0].play();
+        });
+
+        // Pause video when popup closes
+        $('.close-movie').click(function () {
+            $('#m-video')[0].pause();
+        });
+
+        /* Load movie details */
+        async function loadMovieDetails() {
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    console.log("Extracted title from URL: ", title); // Debugging the extracted title
+
+    if (!title) {
+        console.error('No movie title found in the URL');
+        alert("No movie title found in the URL.");
+        return;
+    }
+
+    try {
+        const response = await fetch('movie.json');
+        const movies = await response.json();
+        console.log("Movies loaded: ", movies); // Debugging the loaded movies
+
+        const movie = movies.find(m => m.title === title);
+        console.log("Found movie: ", movie); // Debugging the found movie
+
+        if (!movie) {
+            console.error('Movie not found in movie.json for title:', title);
+            alert("Movie not found!");
+            return;
+        }
+
+                // Movie banner
+                document.getElementById('movie-cover').src = movie.cover;
+                document.getElementById('movie-title').textContent = movie.title;
+                document.getElementById('quality').textContent = movie.quality;
+                document.getElementById('rating').textContent = movie.rating;
+                document.getElementById('release-date').textContent = movie.releaseDate;
+                document.getElementById('duration').textContent = movie.duration;
+                document.getElementById('language').textContent = movie.language;
+                document.getElementById('category').textContent = movie.category;
+                document.getElementById('watch-trailer').href = movie.trailerLink;
+                document.querySelector('#m-video source').src = movie.videoUrl;
+                document.getElementById('m-video').load(); // Update video player
+
+                // Movie details section
+                document.getElementById('movie-details-title').textContent = movie.title;
+                document.getElementById('movie-description').textContent = movie.description;
+
+                // Screenshots
+                const screenshotsContainer = document.getElementById('screenshots-container');
+                movie.screenshots.forEach(src => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    screenshotsContainer.appendChild(img);
+                });
+
+                const downloadContainer = document.getElementById("download-container");
+                if (movie.downloadLinks && Array.isArray(movie.downloadLinks)) {
+                 movie.downloadLinks.forEach(link => {
+                 const box = document.createElement("div");
+                  box.className = "download-box";
+                  box.innerHTML = `
+                  <span><i class="fa-solid fa-server"></i>${link.server}</span>
+                 <span>${link.language}</span>
+                <span>${link.quality}</span>
+                <a href="${link.link}" target="_blank">Download</a>
+                `;
+    downloadContainer.appendChild(box);
+  });
+}
+
+
+            } catch (err) {
+                console.error('Error loading movie details:', err);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', loadMovieDetails);
+    </script>
+</body>
+</html>
